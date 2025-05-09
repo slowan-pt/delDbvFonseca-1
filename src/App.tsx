@@ -1,19 +1,13 @@
 import './App.css'
-import { Button } from "@/components/ui/button"
+
+import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { router } from './routes';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 
 export function App() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh">
-      <Button>Button Click</Button>
-      <h1>Hello Word</h1>
-      <Button variant="destructive">Destructive</Button>
-
-    </div>
-    
-  )
-}
-
- 
-
-
-
+    <HelmetProvider>
+      <Helmet titleTemplate='%s | Delivery DBV' />
+      <RouterProvider router={router} />
+    </HelmetProvider>
+  )}
